@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NawajAhmed Soudagar - Portfolio</title>
+  <!-- AOS CSS -->
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <style>
+
+    html {
+  scroll-behavior: smooth;
+}
+
+
+    /* Reset basic styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+    background: #ddd;
+}
+
+
+
+header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  /* Remove background so it merges with hero */
+  background: transparent;
+}
+
+.logo {
+  color: #080808;
+  font-size: 48px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 0px;
+}   
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #f0a500;
+}
+
+.contact-btn {
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  
+  padding: 8px 18px;
+  background: #ffffff00;
+  color: #000000;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  
+}
+
+.contact-btn:hover {
+transition: background 0.3s ease;
+  background: #757474;
+  color: #040404;
+}
+
+
+/* Hide toggle on desktop */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #000;
+}
+
+
+
+
+.hero {
+  display: flex;
+  flex-wrap: nowrap;
+  min-height: 100vh;
+}
+
+.left {
+  flex: 0.6;
+  background: #ffffff;
+  padding: 10px 60px;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.right {
+  flex: 1;
+  background: #999999;
+  clip-path: polygon(25% 0, 100% 0, 100% 100%, 0% 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right img {
+  margin-top: 5%;  
+  margin-left: 120px;  
+  max-width: 80%;
+
+  height: auto;
+}
+
+
+
+
+
+.left .intro {
+    color: rgb(56, 56, 56);
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.left h1 {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color: #070606;
+  font-size: 58px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.left .role {
+  color: #383838;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.socials {
+  display: flex;
+  gap: 20px;
+}
+
+.socials a img {
+  width: 32px;
+  height: 32px;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.socials a img:hover {
+  filter: grayscale(0%);
+}
+
+
+
+.about {
+  background: #ffffff;
+  padding: 80px 60px;
+  clip-path: polygon(0 0, 100% 3%, 100% 100%, 0% 100%);
+}
+
+.about-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.about p {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.about-cards {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  flex: 1 1 200px;
+  max-width: 250px;
+}
+
+.card h3 {
+  font-size: 20px;
+  color: #111;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 16px;
+  color: #555;
+}
+
+
+.skills {
+  background: #ffffff;
+  padding: 80px 60px;
+}
+
+.skills-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.skills h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.skills p {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.skill {
+  background: #f4f4f4;
+  padding: 15px 10px;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #333;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+
+.experience {
+  background: #ffffff;
+  padding: 80px 60px;
+}
+
+.experience-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.experience h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #333;
+}
+
+.experience p {
+  font-size: 18px;
+  color: #555;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.timeline {
+  display: flex;
+  flex-direction:  column;
+  gap: 40px;
+}
+
+.exp-item {
+  background: #dddddd81;
+  border-left: 8px solid #7c7c7c;
+  border-radius: 90px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 20px 25px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.exp-header h3 {
+  font-size: 20px;
+  color: #111;
+  margin: 0;
+}
+
+.exp-header h4 {
+  font-size: 14px;
+  color: #777;
+  margin: 2px 0 0;
+}
+
+.arrow {
+  font-size: 18px;
+  color: #333;
+  transition: transform 0.3s ease;
+}
+
+.exp-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  padding: 0 25px;
+}
+
+.exp-details ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin: 10px 0 20px;
+}
+
+.exp-details ul li {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.exp-item.active .exp-details {
+  max-height: 1000px; /* large enough to reveal all content */
+}
+
+.exp-item.active .arrow {
+  transform: rotate(180deg);
+}
+
+
+@media (max-width: 768px) {
+  .experience {
+    padding: 60px 20px;
+  }
+}
+
+
+
+.education {
+  background: #fff;
+  padding: 80px 60px;
+}
+
+.education-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.education h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.education p {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.edu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.edu-card {
+  background: #ddd;
+  padding: 25px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.edu-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.edu-card h3 {
+  font-size: 20px;
+  color: #111;
+  margin-bottom: 8px;
+}
+
+.edu-card h4 {
+  font-size: 14px;
+  color: #777;
+}
+
+.certifications {
+  background: #ffffff;
+  padding: 80px 60px;
+}
+
+.certifications-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.certifications h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.certifications p {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.cert-card {
+  background: #ddd;
+  padding: 20px 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.cert-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.cert-icon {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.cert-card h3 {
+  font-size: 18px;
+  color: #111;
+  margin-bottom: 5px;
+}
+
+.cert-card h4 {
+  font-size: 14px;
+  color: #777;
+}
+
+
+.contact {
+  background: #fff;
+  padding: 80px 60px;
+}
+
+.contact-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.contact p {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.contact-grid {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: left;
+}
+
+.contact-form {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  resize: vertical;
+}
+
+.contact-form button {
+  padding: 12px;
+  background: #0b0909;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #040404;
+}
+
+.contact-details {
+  flex: 1 1 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-size: 16px;
+  color: #555;
+}
+
+.contact-details a {
+  color: #5d5d5d;
+  text-decoration: none;
+}
+
+.contact-details a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+@media (max-width: 992px) {
+  header {
+    padding: 20px 30px;
+  }
+  .hero {
+    flex-direction: column;
+  }
+  .left, .right {
+    flex: 1;
+    clip-path: none;
+    padding: 40px 30px;
+  }
+  .right img {
+    margin-left: 0;
+    margin-top: 20px;
+    max-width: 90%;
+  }
+  .left h1 {
+    font-size: 40px;
+  }
+  .left .intro {
+    font-size: 20px;
+  }
+  .left .role {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  header .logo{
+    font-size:30px;
+    margin-left: 95%;
+    display: none;
+  }
+    .hero {
+        height: 50%;
+        display: inline-block;
+    flex-direction: row-reverse;
+    flex: 0.6;
+  }
+
+
+  nav ul {
+    display: none; /* hide nav by default */
+    flex-direction: column;
+    gap: 0px;
+    margin-top: 0px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Show nav when active */
+  nav.active ul {
+    display: flex;
+    background: #ddd;
+    
+  }
+
+  
+  
+
+
+  
+  .left {
+    padding: 120px 20px;
+    display: block;
+    text-align:center;
+    padding-bottom: 0px; 
+    
+  }
+
+  
+
+  .right img {
+    margin: 0 0;
+    max-width: 100%;
+    height: 100%;
+  }
+
+  .left h1 {
+    font-size: 32px;
+  }
+
+  .left .intro {
+    font-size: 18px;
+  }
+
+  .left .role {
+    font-size: 16px;
+  }
+
+  .socials {
+    justify-content: center;
+    margin-top: 20px;
+  }
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  nav ul {
+    gap: 10px;
+  }
+  .about, .skills, .experience, .education, .certifications, .contact {
+    padding: 60px 20px;
+  }
+  .about h2, .skills h2, .experience h2, .education h2, .certifications h2, .contact h2 {
+    font-size: 28px;
+  }
+  .about p, .skills p, .experience p, .education p, .certifications p, .contact p {
+    font-size: 16px;
+  }
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+  .contact-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  .contact-form, .contact-details {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .left h1 {
+    font-size: 32px;
+  }
+  .left .intro {
+    font-size: 18px;
+  }
+  .left .role {
+    font-size: 16px;
+  }
+  .socials {
+    gap: 15px;
+  }
+  .exp-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .exp-header h3 {
+    font-size: 18px;
+  }
+  .exp-header h4 {
+    font-size: 12px;
+  }
+  .arrow {
+    align-self: flex-end;
+  }
+  .contact-form input, .contact-form textarea {
+    font-size: 14px;
+  }
+  .contact-form button {
+    font-size: 14px;
+  }
+}
+
+
+
+  </style>
+</head>
+<body>
+  
+
+ <main>
+  <section class="hero" data-aos="fade-up">
+    <header>
+      <div class="logo"></div>
+      <button class="menu-toggle" id="menuToggle">&#9776;</button>
+
+      <nav>
+        <ul>
+          <a href="#about" class="contact-btn">About Me</a>
+          <a href="#skills" class="contact-btn">Skills </a>
+          <a href="#experience" class="contact-btn"> Experience </a>
+          <a href="#education" class="contact-btn"> Education </a>
+          <a href="#certifications" class="contact-btn"> Certifications </a>
+          
+        </ul>
+      </nav>
+      
+    </header>
+
+    <div class="left">
+      <p class="intro">Hi, I am</p>
+      <h1>NawajAhmed Soudagar</h1>
+      <p class="role">Results-driven Data Analyst with expertise in Python, SQL, and Power BI for data analysis, visualization, and business insights. Skilled in extracting, transforming, and analyzing complex datasets to drive data-driven decision-making</p>
+      <div class="socials">
+        <a href="mailto: nawaz.mrj@gmail.com"><img src="images/logos/email.png" alt="Email" /></a>
+        
+        <a href="https://www.linkedin.com/in/nawajahmed-soudagar-ba5659190/" target="_blank"><img src="images/logos/linkedin.png" alt="LinkedIn" /></a>
+      </div>
+    </div>
+    <div class="right">
+      <img src="images/propic3.png" alt="NawajAhmed Soudagar" />
+    </div>
+  </section>
+</main>
+
+<section id="about" class="about" data-aos="fade-up">
+  <div class="about-content">
+    <h2>About Me</h2>
+    <p>
+      I am a B.Tech graduate in Computer Engineering with a strong foundation in software development, data analysis, and modern technologies. Passionate about solving real-world problems through efficient coding and system design, I’m constantly learning and exploring new tools to stay current in the fast-evolving tech landscape.
+
+I have hands-on experience with programming languages like Python and SQL, and I’m familiar with tools like Power BI for data visualization. My approach combines logical thinking with creative problem-solving to build efficient and scalable solutions. I thrive in collaborative environments and am eager to contribute to innovative tech projects that make a meaningful impact.
+     <br>  
+<br>
+    </p>
+    
+  </div>
+</section>
+
+
+<section id="skills" class="skills" data-aos="fade-up">
+  <div class="skills-content">
+    <h2>Skills</h2>
+    <p>Key areas of expertise </p>
+    <div class="skills-grid">
+      <div class="skill">Python</div>
+      <div class="skill">SQL</div>
+      <div class="skill">Data Analyst</div>
+      <div class="skill">HTML</div>
+      <div class="skill">CSS</div>
+      <div class="skill">Analytical & Bi Tools</div>
+      <div class="skill">Data Visualization</div>
+      <div class="skill">Power Bi</div>
+      <div class="skill">Excel</div>
+     
+    </div>
+  </div>
+</section>
+
+
+<section id="experience" class="experience" data-aos="fade-up">
+  <div class="experience-content">
+    <h2>Professional & Project Experience</h2>
+    <p>Fresher with strong analytical skills and practical experience in various projects</p>
+    
+   <div class="timeline">
+
+  <div class="exp-item">
+    <button class="exp-header">
+      <div>
+        <h3>Voice Assistant Based On Python</h3>
+        
+      </div>
+      <span class="arrow">▼</span>
+    </button>
+    <div class="exp-details">
+      <ul>
+        <li>The primary goal of this project is to design and implement a voice assistant capable of performing various tasks based on voice commands..</li>
+        <li>Python: Our Programming Language of choice.</li>
+        <li>Speech Recognition: For converting spoken language into text.</li>
+        <li>Text-to-Speech (TTS): To transform text response into spoken words.</li>
+        
+      </ul>
+    </div>
+  </div>
+
+  <div class="exp-item">
+    <button class="exp-header">
+      <div>
+        <h3>Web Development</h3>
+        
+      </div>
+      <span class="arrow">▼</span>
+    </button>
+    <div class="exp-details">
+      <ul>
+        <li>We developed a Milk Daily website it was a live project.</li>
+        <li>The primary object of this project is to design and develop a fully functional website.</li>
+        <li>HTML: For structuring the web content.</li>
+        <li>CSS: To style and desgin the website.</li>
+        <li>Django:Back-end Technologies.</li>
+        
+      </ul>
+    </div>
+  </div>
+
+  <div class="exp-item">
+    <button class="exp-header">
+      <div>
+        <h3> Smart Nest-An Intelligent Smart Home</h3>
+        
+      </div>
+      <span class="arrow">▼</span>
+    </button>
+    <div class="exp-details">
+      <ul>
+        <li>We developed a home automation project using the Iot devices.</li>
+        <li>The aim of this project was to develop low cost Iot based smart home automation system.</li>
+        <li>Device used: Arduino Uno, Relay, Current Transmitter, Led, Fan,etc.</li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+
+</div>
+
+  </div>
+</section>
+
+
+<section id="education" class="education" data-aos="fade-up">
+  <div class="education-content">
+    <h2>Education</h2>
+    <p>Academic background </p>
+    
+    <div class="edu-grid">
+      <div class="edu-card">
+        <h3>B.Tech Computer Engineering</h3>
+        <h4>Sanjay Bhokare Group Of Institutes, Miraj | 2021 – 2024</h4>
+        <h5>Affilatted to Dr. Babasaheb Ambedkar Technological University, Lonere</h5>
+      </div>
+      
+      
+    </div>
+  </div>
+</section>
+
+<section id="certifications" class="certifications" data-aos="fade-up">
+  <div class="certifications-content">
+    <h2>Certifications</h2>
+    <p>Professional training and certifications</p>
+    
+    <div class="cert-grid">
+
+      <div class="cert-card">
+        <div class="cert-icon">📜</div>
+        <h3>Python Programming</h3>
+        <h4>Param Computers | Mar 2024</h4>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-icon">📊</div>
+        <h3>Data Analyst</h3>
+        <h4>Seventh Sense Talent Solution and NASSCOM Foundation | Sept 2024</h4>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-icon">💻</div>
+        <h3>Data Visualization</h3>
+        <h4>Tata Empowering Business with Effective Insights Job Simulation on Forage | July 2024</h4>
+      </div>
+
+     
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+  <script>
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
+
+
+const expHeaders = document.querySelectorAll('.exp-header');
+expHeaders.forEach(header => {
+  header.addEventListener('click', () => {
+    const item = header.parentElement;
+    item.classList.toggle('active');
+  });
+});
+
+
+
+
+  const toggle = document.getElementById('menuToggle');
+  const nav = document.querySelector('nav');
+  const hero = document.querySelector('.hero');
+
+  toggle.addEventListener('click', () => {
+    nav.classList.toggle('active');
+    hero.classList.toggle('show-image');
+  });
+</script>
+
+
+
+
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1300, // animation duration
+    once: false      // animation only once
+  });
+</script>
+
+
+</body>
+</html>
